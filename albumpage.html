@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>responsive js!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asset&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="row1">
+      <div class="albumcolumn">
+        <div class="dividecolumn">
+          <div class="album black" id="her-majesty" onclick="changeToAbbey()">
+            <img src="images/covers/abby-rd-albm.jpg" />
+          </div>
+          <div class="album black" id="lovely-rita" onclick="changeToSgt()">
+            <img src="images/covers/sgtpepp.jpg" />
+          </div>
+        </div>
+        <div class="dividecolumn">
+          <div class="album black" id="if-i-fell" onclick="changeToHardDay()">
+            <img src="images/covers/harddaysnight.jpg" />
+          </div>
+          <div class="album black" id="yesterday" onclick="changeToHelp()">
+            <img src="images/covers/help-album-cover.jpg" />
+          </div>
+        </div>
+        
+      </div>
+      <div class="maincontent ">
+        <div class="top-section black">
+        <div class="beatlecol-left lightpurple ">
+          <div class="home">
+            <a href="index.html">
+              <button class="home-bttn">Back to Home</button>
+            </a>
+          </div>
+          <div id="toggle-media">
+          <img id="beatle-main" src="images/beatles/beatlesabbyroaderaa.png" onclick="toggleMedia()" />
+        </div>
+      </div>
+          <div class="play-pause ">
+            <div class="play-button ">
+              <img src="images/resumee.png" />
+            </div>
+            <div class="pause-button ">
+              <img src="images/pause.png" />
+            </div>
+          </div>
+        </div>
+          <div class="beatlecol-right ">
+            <div class="album-title pink">
+              <img src="images/titles/abbyrdtitle1.png" />
+            </div>
+            <div class="info lightpurple">
+              The Beatles' 2nd to Last Album
+            </div>
+            <div class="randomrow ">
+              <img class="rndm" src="images/randombttn.png" onclick="randomizer()" />
+            </div>
+          </div>
+        </div>
+        <div class="albumcolumn">
+          <div class="dividecolumn">
+            <div class="album black" id="in-my-life" onclick="changeToRS()"> 
+              <img src="images/covers/rbbersoul1.jpg" />
+            </div>
+            <div class="album black" id="julia" onclick="changeToWhite()">
+              <img src="images/covers/whitealbm1.jpg" />
+            </div>
+          </div>
+          <div class="dividecolumn">
+            <div class="album black" id="baby-its-you" onclick="goToPls()">
+              <img src="images/covers/pleasepleaseme.jpg" />
+            </div>
+            <div class="album black" id="get-back" onclick="goToLIB()">
+              <img src="images/covers/letitbe1.jpg" />
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
