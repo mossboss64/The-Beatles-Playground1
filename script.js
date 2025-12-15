@@ -72,7 +72,7 @@ function changeToHelp() {
     "images/titles/beatleshelp!.png";
   document.querySelector(".info").textContent = "The Beatles - Help (1965)";
 }
-
+//test
 function changeToRS() {
   setTheme("#6a4f3b", "#d8c7b3", "black");
   currentAlbum = "rs";
