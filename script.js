@@ -1,10 +1,31 @@
 let r;
-let currentImage;
-let currentVideo;
+let currentAlbum = "abbey";
+const audioPlayer = document.getElementById("album-song");
+const albumTracks = {
+  abbey: "audio/goldenslumb.ogg",
+  sgt: "audio/a-day-in-the-life.ogg",
+  hardday: "audio/dancewyou.ogg",
+  help: "audio/youve-got-to-hide-your-love-away.ogg",
+  rs: "in-my-life.ogg",
+  white: "julia.ogg",
+  pls: "do-you-want-to-know-a-secret.ogg",
+  lib: "longroad.ogg",
+};
+document.querySelector(".play-button").addEventListener("click", () => {
+  if (!audioPlayer.src) {
+    audioPlayer.src = albumTracks[currentAlbum];
+  }
+  audioPlayer.play();
+});
+
+document.querySelector(".pause-button").addEventListener("click", () => {
+  audioPlayer.pause();
+});
 
 function changeToAbbey() {
-  currentImage = "images/beatles/beatlesabbyroaderaa.png";
-  currentVideo = "https://www.youtube.com/embed/8qv55wdF0NY";
+  currentAlbum = "abbey";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/beatlesabbyroaderaa.png";
   document.querySelector(".album-title img").src =
@@ -14,6 +35,9 @@ function changeToAbbey() {
 }
 
 function changeToSgt() {
+  currentAlbum = "sgt";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/sgtpeppersbeatles1.png";
   document.querySelector(".album-title img").src =
@@ -23,6 +47,9 @@ function changeToSgt() {
 }
 
 function changeToHardDay() {
+  currentAlbum = "hardday";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/hard-days-night (1).png";
   document.querySelector(".album-title img").src =
@@ -32,6 +59,9 @@ function changeToHardDay() {
 }
 
 function changeToHelp() {
+  currentAlbum = "help";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/helpbeatlespiano.png";
   document.querySelector(".album-title img").src =
@@ -40,6 +70,10 @@ function changeToHelp() {
 }
 
 function changeToRS() {
+  currentAlbum = "rs";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
+
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/1965rbbersoulbeatles.png";
   document.querySelector(".album-title img").src =
@@ -49,6 +83,9 @@ function changeToRS() {
 }
 
 function changeToWhite() {
+  currentAlbum = "white";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/whitealbm1968beat1.png";
   document.querySelector(".album-title img").src =
@@ -58,6 +95,9 @@ function changeToWhite() {
 }
 
 function goToPls() {
+  currentAlbum = "pls";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/1963beat.png";
   document.querySelector(".album-title img").src =
@@ -67,6 +107,9 @@ function goToPls() {
 }
 
 function goToLIB() {
+  currentAlbum = "lib";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/beatles-rooftopconcert.jpg";
   document.querySelector(".album-title img").src =
