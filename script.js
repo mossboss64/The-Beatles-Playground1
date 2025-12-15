@@ -67,7 +67,7 @@ function changeToHelp() {
   audioPlayer.pause();
   audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
-    "images/beatles/helpbeatlespiano.png";
+    "images/beatles/helpbeatlespiano1.png";
   document.querySelector(".album-title img").src =
     "images/titles/beatleshelp!.png";
   document.querySelector(".info").textContent = "The Beatles - Help (1965)";
