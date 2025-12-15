@@ -23,6 +23,7 @@ document.querySelector(".pause-button").addEventListener("click", () => {
 });
 
 function changeToAbbey() {
+  setTheme("#eae6df", "#cfa86b");
   currentAlbum = "abbey";
   audioPlayer.pause();
   audioPlayer.src = albumTracks[currentAlbum];
@@ -35,6 +36,7 @@ function changeToAbbey() {
 }
 
 function changeToSgt() {
+  setTheme("#d7263d", "#fbb13c", "black");
   currentAlbum = "sgt";
   audioPlayer.pause();
   audioPlayer.src = albumTracks[currentAlbum];
@@ -47,6 +49,7 @@ function changeToSgt() {
 }
 
 function changeToHardDay() {
+  setTheme("#0d1b2a", "#1b263b", "white");
   currentAlbum = "hardday";
   audioPlayer.pause();
   audioPlayer.src = albumTracks[currentAlbum];
@@ -59,6 +62,7 @@ function changeToHardDay() {
 }
 
 function changeToHelp() {
+  setTheme("#1f6ae1", "#ffffff", "black");
   currentAlbum = "help";
   audioPlayer.pause();
   audioPlayer.src = albumTracks[currentAlbum];
@@ -70,6 +74,7 @@ function changeToHelp() {
 }
 
 function changeToRS() {
+  setTheme("#6a4f3b", "#d8c7b3", "black");
   currentAlbum = "rs";
   audioPlayer.pause();
   audioPlayer.src = albumTracks[currentAlbum];
@@ -83,6 +88,7 @@ function changeToRS() {
 }
 
 function changeToWhite() {
+  setTheme("#ffffff", "#e0e0e0", "black");
   currentAlbum = "white";
   audioPlayer.pause();
   audioPlayer.src = albumTracks[currentAlbum];
@@ -95,6 +101,7 @@ function changeToWhite() {
 }
 
 function goToPls() {
+  setTheme("#2e2e2e", "#f2f2f2", "black");
   currentAlbum = "pls";
   audioPlayer.pause();
   audioPlayer.src = albumTracks[currentAlbum];
@@ -131,6 +138,13 @@ function randomizer() {
   if (r == 7) changeToHardDay();
   if (r == 8) changeToSgt();
 }
+//themecolors
+function setTheme(main, accent, text = "black") {
+  document.documentElement.style.setProperty("--bg-main", main);
+  document.documentElement.style.setProperty("--bg-accent", accent);
+  document.documentElement.style.setProperty("--text-color", text);
+}
+
 //explorepage
 document.querySelectorAll(".historyBtn").forEach((btn) => {
   btn.addEventListener("click", () => {
