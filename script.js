@@ -1,10 +1,32 @@
 let r;
-let currentImage;
-let currentVideo;
+let currentAlbum = "abbey";
+const audioPlayer = document.getElementById("album-song");
+const albumTracks = {
+  abbey: "audio/goldenslumb.ogg",
+  sgt: "audio/a-day-in-the-life.ogg",
+  hardday: "audio/dancewyou.ogg",
+  help: "audio/youve-got-to-hide-your-love-away.ogg",
+  rs: "in-my-life.ogg",
+  white: "julia.ogg",
+  pls: "do-you-want-to-know-a-secret.ogg",
+  lib: "longroad.ogg",
+};
+document.querySelector(".play-button").addEventListener("click", () => {
+  if (!audioPlayer.src) {
+    audioPlayer.src = albumTracks[currentAlbum];
+  }
+  audioPlayer.play();
+});
+
+document.querySelector(".pause-button").addEventListener("click", () => {
+  audioPlayer.pause();
+});
 
 function changeToAbbey() {
-  currentImage = "images/beatles/beatlesabbyroaderaa.png";
-  currentVideo = "https://www.youtube.com/embed/8qv55wdF0NY";
+  setTheme("#eae6df", "#cfa86b");
+  currentAlbum = "abbey";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/beatlesabbyroaderaa.png";
   document.querySelector(".album-title img").src =
@@ -14,6 +36,10 @@ function changeToAbbey() {
 }
 
 function changeToSgt() {
+  setTheme("#d7263d", "#fbb13c", "black");
+  currentAlbum = "sgt";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/sgtpeppersbeatles1.png";
   document.querySelector(".album-title img").src =
@@ -23,6 +49,10 @@ function changeToSgt() {
 }
 
 function changeToHardDay() {
+  setTheme("#0d1b2a", "#1b263b", "white");
+  currentAlbum = "hardday";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/hard-days-night (1).png";
   document.querySelector(".album-title img").src =
@@ -32,14 +62,23 @@ function changeToHardDay() {
 }
 
 function changeToHelp() {
+  setTheme("#1f6ae1", "#ffffff", "black");
+  currentAlbum = "help";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
-    "images/beatles/helpbeatlespiano.png";
+    "images/beatles/helpbeatlespiano1.png";
   document.querySelector(".album-title img").src =
     "images/titles/beatleshelp!.png";
   document.querySelector(".info").textContent = "The Beatles - Help (1965)";
 }
 
 function changeToRS() {
+  setTheme("#6a4f3b", "#d8c7b3", "black");
+  currentAlbum = "rs";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
+
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/1965rbbersoulbeatles.png";
   document.querySelector(".album-title img").src =
@@ -49,6 +88,10 @@ function changeToRS() {
 }
 
 function changeToWhite() {
+  setTheme("#ffffff", "#e0e0e0", "black");
+  currentAlbum = "white";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/whitealbm1968beat1.png";
   document.querySelector(".album-title img").src =
@@ -58,6 +101,10 @@ function changeToWhite() {
 }
 
 function goToPls() {
+  setTheme("#2e2e2e", "#f2f2f2", "black");
+  currentAlbum = "pls";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/1963beat.png";
   document.querySelector(".album-title img").src =
@@ -67,6 +114,9 @@ function goToPls() {
 }
 
 function goToLIB() {
+  currentAlbum = "lib";
+  audioPlayer.pause();
+  audioPlayer.src = albumTracks[currentAlbum];
   document.querySelector(".beatlecol-left img").src =
     "images/beatles/beatles-rooftopconcert.jpg";
   document.querySelector(".album-title img").src =
@@ -88,6 +138,13 @@ function randomizer() {
   if (r == 7) changeToHardDay();
   if (r == 8) changeToSgt();
 }
+//themecolors
+function setTheme(main, accent, text = "black") {
+  document.documentElement.style.setProperty("--bg-main", main);
+  document.documentElement.style.setProperty("--bg-accent", accent);
+  document.documentElement.style.setProperty("--text-color", text);
+}
+
 //explorepage
 document.querySelectorAll(".historyBtn").forEach((btn) => {
   btn.addEventListener("click", () => {

@@ -22,6 +22,24 @@ img {
   height: 100%;
   object-fit: contain;
 }
+:root {
+  --bg-main: lavender;
+  --bg-accent: pink;
+  --text-color: black;
+}
+
+.maincontent {
+  background: var(--bg-main);
+}
+
+.album-title {
+  background: var(--bg-accent);
+}
+
+.info {
+  background: linear-gradient(180deg, var(--bg-main), var(--bg-accent));
+  color: var(--text-color);
+}
 .row1 {
   width: 100%;
   height: 100%;
@@ -45,12 +63,13 @@ img {
 }
 
 .maincontent {
-  width: 70%;
+  max-width: 70%;
   height: 100%;
   display: flex;
-  `border-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 .beatlecol-left {
   width: 100%;
@@ -97,6 +116,36 @@ img {
 }
 .home-bttn {
   font-family: "Asset";
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 0;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
 }
 @media only screen and (max-width: 680px) {
   body {
