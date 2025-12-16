@@ -14,6 +14,7 @@ const albumTracks = {
 document.querySelector(".play-button").addEventListener("click", () => {
   if (!audioPlayer.src) {
     audioPlayer.src = albumTracks[currentAlbum];
+    audioPlayer.load();
   }
   audioPlayer.play();
 });
@@ -160,3 +161,4 @@ document.querySelectorAll(".backBtn").forEach((btn) => {
     document.getElementById("explorePanel").hidden = false;
   });
 });
+
