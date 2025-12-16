@@ -6,10 +6,10 @@ const albumTracks = {
   sgt: "audio/a-day-in-the-life.ogg",
   hardday: "audio/dancewyou.ogg",
   help: "audio/youve-got-to-hide-your-love-away.ogg",
-  rs: "in-my-life.ogg",
-  white: "julia.ogg",
-  pls: "do-you-want-to-know-a-secret.ogg",
-  lib: "longroad.ogg",
+  rs: "audio/in-my-life.ogg",
+  white: "audio/julia.ogg",
+  pls: "audio/do-you-want-to-know-a-secret.ogg",
+  lib: "audio/longroad.ogg",
 };
 document.querySelector(".play-button").addEventListener("click", () => {
   if (!audioPlayer.src) {
