@@ -9,7 +9,7 @@ const albumTracks = {
   rs: "audio/in-my-life.ogg",
   white: "audio/julia.ogg",
   pls: "audio/do-you-want-to-know-a-secret.ogg",
-  lib: "audio/longroad.ogg",
+  lib: "The-Beatles-Playground1/audio/longroad.ogg",
 };
 document.querySelector(".play-button").addEventListener("click", () => {
   if (!audioPlayer.src) {
@@ -161,4 +161,5 @@ document.querySelectorAll(".backBtn").forEach((btn) => {
     document.getElementById("explorePanel").hidden = false;
   });
 });
+
 
