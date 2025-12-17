@@ -12,9 +12,9 @@ const albumTracks = {
   lib: "The-Beatles-Playground1/audio/longroad.ogg",
 };
 document.querySelector(".play-button").addEventListener("click", () => {
-  if (!audioPlayer.src) {
-    audioPlayer.src = albumTracks[currentAlbum];
-    audioPlayer.load();
+  audioPlayer.src = albumTracks[currentAlbum];
+  audioPlayer.load(); // important
+  audioPlayer.play().catch(err => console.error(err));
   }
   audioPlayer.play();
 });
@@ -161,5 +161,6 @@ document.querySelectorAll(".backBtn").forEach((btn) => {
     document.getElementById("explorePanel").hidden = false;
   });
 });
+
 
 
