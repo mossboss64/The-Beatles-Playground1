@@ -1,6 +1,9 @@
 let r;
 let currentAlbum = "abbey";
 const audioPlayer = document.getElementById("album-song");
+audioPlayer.addEventListener("loadstart", () => {
+  console.log("AUDIO SRC:", audioPlayer.src);
+});
 const albumTracks = {
   abbey: "audio/goldenslumb.ogg",
   sgt: "audio/a-day-in-the-life.ogg",
@@ -12,13 +15,12 @@ const albumTracks = {
   lib: "The-Beatles-Playground1/audio/longroad.ogg",
 };
 document.querySelector(".play-button").addEventListener("click", () => {
+  audioPlayer.pause();
+  audioPlayer.removeAttribute("src");
   audioPlayer.src = albumTracks[currentAlbum];
-  audioPlayer.load(); // important
+  audioPlayer.load();
   audioPlayer.play().catch(err => console.error(err));
-  }
-  audioPlayer.play();
 });
-
 document.querySelector(".pause-button").addEventListener("click", () => {
   audioPlayer.pause();
 });
@@ -161,6 +163,7 @@ document.querySelectorAll(".backBtn").forEach((btn) => {
     document.getElementById("explorePanel").hidden = false;
   });
 });
+
 
 
 
